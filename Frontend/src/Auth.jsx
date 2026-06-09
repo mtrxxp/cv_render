@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as FingerprintJS from "@fingerprintjs/fingerprintjs";
+import logo from "../images/морф.png";
 
 // Чёрный список доменов временных/одноразовых почт (Disposable Email Blocklist)
 const BANNED_DOMAINS = [
@@ -12,6 +13,39 @@ const BANNED_DOMAINS = [
   "dispostable.com",
   "getairmail.com",
   "trashmail.com",
+  "maildrop.cc",
+  "throwaway.email",
+  "getnada.com",
+  "temp-mail.org",
+  "fakeinbox.com",
+  "mintemail.com",
+  "mohmal.com",
+  "emailondeck.com",
+  "throwawaymail.com",
+  "tempinbox.com",
+  "mytemp.email",
+  "tempmailer.com",
+  "fakemail.net",
+  "disposablemail.com",
+  "burnermail.io",
+  "tempr.email",
+  "mailnesia.com",
+  "spamgourmet.com",
+  "inboxkitten.com",
+  "crazymailing.com",
+  "mailexpire.com",
+  "tempail.com",
+  "tmpmail.net",
+  "anonymousemail.me",
+  "emailsensei.com",
+  "fakeemailgenerator.com",
+  "inboxbear.com",
+  "discard.email",
+  "fakermail.com",
+  "temp-mail.io",
+  "temp-mails.com",
+  "tmailor.com",
+  "incognitomail.com",
 ];
 
 export default function AuthPage({ onNavigate, onAuthSuccess }) {
@@ -133,9 +167,7 @@ export default function AuthPage({ onNavigate, onAuthSuccess }) {
       <div className="relative z-10 w-full max-w-md bg-white/[0.01] border border-white/[0.04] backdrop-blur-xl rounded-2xl p-8 shadow-2xl space-y-6">
         {/* Хедер формы */}
         <div className="text-center space-y-1.5">
-          <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-purple-600 text-white font-bold text-sm mb-2 shadow-lg shadow-blue-900/20">
-            Ω
-          </div>
+          <img src={logo} alt="Morph AI" className="w-10 h-10 mx-auto mb-2 object-contain" />
           <h2 className="text-xl font-bold text-white tracking-tight">
             {isSignUp ? "Create your license" : "Access your console"}
           </h2>

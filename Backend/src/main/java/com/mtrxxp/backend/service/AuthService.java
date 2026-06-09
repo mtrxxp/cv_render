@@ -25,6 +25,7 @@ public class AuthService {
     private final FingerprintRepository fingerprintRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
+    private final LicenseService licenseService;
 
     public AuthResponse loginUser(LoginRequest request) {
         User user = userRepository.findByEmail(request.email())
@@ -37,6 +38,9 @@ public class AuthService {
         License license = licenseRepository.findById(user.getId())
                 .orElseThrow(() -> new RuntimeException("License configuration missing for this account."));
 
+        // Проверяем и обновляем лицензию если нужен сброс счетчика
+        license = licenseService.validateAndResetIfNeeded(license);
+
         String token = jwtService.generateToken(user.getEmail());
 
         return new AuthResponse(
@@ -46,6 +50,7 @@ public class AuthService {
                 token
         );
     }
+
     @Transactional
     public AuthResponse registerNewUser(RegisterRequest request) {
         if (userRepository.existsByEmail(request.email())) {

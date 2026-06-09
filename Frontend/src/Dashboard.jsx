@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../images/морф.png";
 
 export default function DashboardPage({ onNavigate }) {
   const [userLicense, setLicenseData] = useState(null);
@@ -80,15 +81,16 @@ export default function DashboardPage({ onNavigate }) {
 
       {/* DASHBOARD HEADER */}
       <header className="fixed top-0 left-0 w-full z-50 bg-[#03020A]/40 backdrop-blur-xl border-b border-white/[0.04] px-6 md:px-12 py-4 flex justify-between items-center">
-        <div className="flex items-center gap-2.5 font-bold text-white tracking-tight text-sm">
-          <div className="w-5 h-5 rounded-md bg-gradient-to-tr from-blue-600 to-purple-600 flex items-center justify-center text-[10px] text-white">
-            Ω
-          </div>
-          OVERRIDE{" "}
+        <button
+          onClick={() => onNavigate("landing")}
+          className="flex items-center gap-2.5 font-bold text-white tracking-tight text-sm hover:opacity-80 transition-opacity cursor-pointer"
+        >
+          <img src={logo} alt="Morph AI" className="w-8 h-8 object-contain" />
+          MORPH AI{" "}
           <span className="text-[10px] font-mono text-zinc-600 ml-1 font-normal">
             v1.0.4
           </span>
-        </div>
+        </button>
         <div className="flex items-center gap-4">
           <span className="text-xs text-zinc-500 hidden sm:inline">
             Session: Secure TLS
@@ -218,7 +220,7 @@ export default function DashboardPage({ onNavigate }) {
                 href="#download-win"
                 onClick={(e) => {
                   e.preventDefault();
-                  alert("Downloading override_agent_v1.0.4.exe (Simulated)");
+                  alert("Downloading morph_ai_agent_v1.0.4.exe (Simulated)");
                 }}
                 className="w-full py-2.5 bg-zinc-900 hover:bg-zinc-800 text-white font-medium text-xs rounded-xl border border-white/[0.05] transition-all flex items-center justify-center gap-2 shadow-lg"
               >
@@ -228,7 +230,7 @@ export default function DashboardPage({ onNavigate }) {
                 href="#download-mac"
                 onClick={(e) => {
                   e.preventDefault();
-                  alert("Downloading override_agent_v1.0.4.dmg (Simulated)");
+                  alert("Downloading morph_ai_agent_v1.0.4.dmg (Simulated)");
                 }}
                 className="w-full py-2.5 bg-white/[0.02] hover:bg-white/[0.05] text-zinc-400 hover:text-white font-medium text-xs rounded-xl border border-white/[0.04] transition-all flex items-center justify-center gap-2"
               >
