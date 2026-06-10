@@ -18,7 +18,7 @@ export default function DashboardPage({ onNavigate }) {
 
       try {
         const response = await fetch(
-          "http://localhost:8080/dashboard/license",
+          "https://morph-ai-eight.vercel.app/dashboard/license",
           {
             method: "GET",
             headers: {
