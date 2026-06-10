@@ -1,10 +1,10 @@
 FROM maven:3.9-eclipse-temurin-21-alpine AS build
 WORKDIR /app
 
-COPY Backend/pom.xml ./Backend/
+COPY Backend/pom.xml ./
 RUN mvn dependency:go-offline
 
-COPY Backend/src ./Backend/src
+COPY Backend/src ./src
 RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21-jre-alpine
