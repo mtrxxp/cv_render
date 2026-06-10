@@ -55,7 +55,8 @@ public class SecurityConfig {
         // чтобы запросы от Nginx и Vite внутри докера и снаружи не резались
         configuration.setAllowedOriginPatterns(List.of(
                 "http://localhost:[*]",
-                "http://127.0.0.1:[*]"
+                "http://127.0.0.1:[*]",
+                "https://morph-ai-eight.vercel.app/"
         ));
 
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
