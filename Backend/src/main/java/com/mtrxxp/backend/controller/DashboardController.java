@@ -18,7 +18,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/dashboard")
-@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+@CrossOrigin(origins = "https://morph-ai-eight.vercel.app/", allowCredentials = "true")
 public class DashboardController {
     private final JwtService jwtService;
     private final UserRepository userRepository;
