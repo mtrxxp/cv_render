@@ -115,7 +115,7 @@ export default function AuthPage({ onNavigate, onAuthSuccess }) {
       // 2. Реальный POST-запрос к нашему Spring Boot контроллеру
       const endpoint = isSignUp ? "register" : "login";
 
-      const response = await fetch(`http://localhost:8080/auth/${endpoint}`, {
+      const response = await fetch(`/auth/${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -167,7 +167,11 @@ export default function AuthPage({ onNavigate, onAuthSuccess }) {
       <div className="relative z-10 w-full max-w-md bg-white/[0.01] border border-white/[0.04] backdrop-blur-xl rounded-2xl p-8 shadow-2xl space-y-6">
         {/* Хедер формы */}
         <div className="text-center space-y-1.5">
-          <img src={logo} alt="Morph AI" className="w-10 h-10 mx-auto mb-2 object-contain" />
+          <img
+            src={logo}
+            alt="Morph AI"
+            className="w-10 h-10 mx-auto mb-2 object-contain"
+          />
           <h2 className="text-xl font-bold text-white tracking-tight">
             {isSignUp ? "Create your license" : "Access your console"}
           </h2>
