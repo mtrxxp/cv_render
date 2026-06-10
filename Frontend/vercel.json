@@ -5,6 +5,14 @@
       "destination": "https://cv-backend-7t6o.onrender.com/auth/:path*"
     },
     {
+      "source": "/dashboard/:path*",
+      "destination": "https://cv-backend-7t6o.onrender.com/dashboard/:path*"
+    },
+    {
+      "source": "/dashboard/license/:path*",
+      "destination": "https://cv-backend-7t6o.onrender.com/dashboard/license/:path*"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
